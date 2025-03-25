@@ -1,0 +1,5 @@
+com\example\uni\UniApplication.class
+com\example\uni\Listing.class
+com\example\uni\ListingService.class
+com\example\uni\ListingRepository.class
+com\example\uni\ListingController.class

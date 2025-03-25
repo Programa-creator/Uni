@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Оголошення</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Список оголошень</h2>
+        <a href="/export/excel" class="btn btn-success">
+            Завантажити у Excel
+        </a>
+    </div>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Заголовок</th>
+            <th>Ціна</th>
+            <th>Посилання</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="listing : ${listings}">
+            <td th:text="${listing.title}"></td>
+            <td th:text="${listing.price} + ' ' + ${listing.currency}"></td>
+            <td>
+                <a th:href="${listing.url}" target="_blank">Переглянути</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
